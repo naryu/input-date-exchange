@@ -9,10 +9,20 @@
 <p>type="date"のinputを変更した時に、「yyyy-mm-dd」書式の値を「yyyy/mm/dd」に変換してteype="text"のinputに渡します。</p>
 <h2>type="date"のinput</h2>
 <input type="date" name="dateinput" id="dateIn" />
-<p>↓この値を変更すると下記に反映される。</p>
+<p>↓この値を変更すると下記に反映される。</p>  
 <h2>type="text"のinput</h2>
 <input type="text" name="date" id="dateOut" />
 </form>
+
+<pre>
+<code>
+var dateIn = document.getElementById('dateIn');
+var dateOut = document.getElementById('dateOut');
+dateIn.addEventListener('change', function(){
+    dateOut.value = dateIn.value.replace(/-/g, '/');
+});
+</code>
+</pre>
 
 <script>
 var dateIn = document.getElementById('dateIn');

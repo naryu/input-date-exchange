@@ -1,16 +1,3 @@
-// ヘッダーを設定するmiddlewareを返す関数を定義
-var setHeader = function (headers) {
-    return function (req, res, next) {
-        var key;
-        for (key in headers) {
-            if (!headers.hasOwnProperty(key)) {
-                continue;
-            }
-            res.setHeader(key, headers[key]);
-        }
-        next();
-    }
-}
 
 module.exports = function(grunt) {
   // Project configuration.
@@ -34,22 +21,6 @@ module.exports = function(grunt) {
           keepalive:true,
           hostname:'localhost',
           livereload: true
-          // middlewareオプション
-          // リクエストにかますmiddlewareを配列で返す
-          /*
-          middleware: [
-            function myMiddleware(req, res, next) {
-              res.end('Hello, world!');
-            }
-          ],
-          middleware: function(connect) {
-            return [
-              function(req, res, next) {
-                res.setHeader('Content-Type', 'text/html; charset=Shift-JIS');
-              }
-            ];
-          }
-          */
         }
       }
     }
