@@ -2,6 +2,19 @@
 <html lang="ja">
 <head>
 <title>input date</title>
+<style>
+<!--
+code {
+    background: #f0f0f0;
+    border: #999 solid 1px;
+    border-radius: 5px;
+    display: block;
+    padding: 10px;
+    font-family: monaco;
+    overflow: scroll;
+}
+-->
+</style>
 </head>
 <body>
 <form>
@@ -15,13 +28,11 @@
 </form>
 
 <pre>
-<code>
-var dateIn = document.getElementById('dateIn');
+<code>var dateIn = document.getElementById('dateIn');
 var dateOut = document.getElementById('dateOut');
 dateIn.addEventListener('change', function(){
     dateOut.value = dateIn.value.replace(/-/g, '/');
-});
-</code>
+});</code>
 </pre>
 
 <script>
